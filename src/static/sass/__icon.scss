@@ -1,0 +1,52 @@
+@charset "utf-8";
+//icon define
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?f4akqc');
+	src:url('fonts/icomoon.eot?#iefixf4akqc') format('embedded-opentype'),
+		url('fonts/icomoon.woff?f4akqc') format('woff'),
+		url('fonts/icomoon.ttf?f4akqc') format('truetype'),
+		url('fonts/icomoon.svg?f4akqc#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-star:before {
+	content: "\e600";
+}
+.icon-star2:before {
+	content: "\e601";
+}
+.icon-cancel-circle:before {
+	content: "\e602";
+}
+.icon-close:before {
+	content: "\e603";
+}
+.icon-checkmark:before {
+	content: "\e604";
+}
+.icon-checkmark2:before {
+	content: "\e605";
+}
+.icon-minus:before {
+	content: "\e606";
+}
+.icon-plus:before {
+	content: "\e607";
+}

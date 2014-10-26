@@ -1,0 +1,11 @@
+# 配置  git ignore
+
+# ignore .sass-cache directory
+.sass-cache
+
+# ignore .node_modules directory
+
+.node_modules
+
+# ignore css file  directory
+*.css
