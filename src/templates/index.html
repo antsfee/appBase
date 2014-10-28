@@ -1,12 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta content="text/html ; charset=utf-8" http-equiv="Content-Type" />
-    <title></title>
+<!DOCTYPE html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{% block Title %}{% endblock %}</title>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    {% block Style %}{% endblock %}
 </head>
+
 <body>
-<a href="/purchase">purchase</a>
-<h2>Hello no bb</h2>
+<div class="wraper">
+{% block Header %}
+    <div id="header" class="header">
+      <div class="mainArea">
+        <a href="javascript:void" class="logo icon-logo" title="home"></a>
+        <ul class="operationBar" id="operationBar">
+            <li>
+              <a class="user-tx" href="#"><img src="../img/tx_header.jpg" /></a>
+              <a class="" href="javascript:void" title="hello kitty">您好,Lisan</a>
+            </li>
+            <li>
+              <a class="loginOut" href="javascript:void" title="退出 ">[退出]</a>
+            </li>
+            <li>
+              <a class="site-answer icon" href="javascript:void" title="详解">
+                <span class="icon-question"></span>
+              </a>
+            </li>
+        </ul> <!-- 头部操作区搜索，设置，退出 -->
+      </div>
+</div>
+{% endblock %}
+{% block Content %}{% endblock %}
+{% block Footer %}
+    <div id="footer" class="footer">
+      <div class="mainArea">
+        <address class="siteinfo">地址：北京市海淀区紫竹院路81号院3号楼北方地产大厦4层 (邮编:100089)   电话：010--58851111</address>
+        <p class="copyright">Copyright©2013   必联(北京)电子商务科技有限公司</p>
+      </div>
+ </div>
+{% endblock %}
+</div>
+{% block Script %}{% endblock %}
 </body>
 </html>
