@@ -40,13 +40,9 @@ require.config({
 
 
 require([ "jquery", 'jquery.customSelect' ,'swf/js/swfupload', 'swf/js/fileprogress' , 'swf/js/handlers' ],function ($,customSelect ,SWFUpload, fileprogress ,handlers) {
-
-        alert("abc in upload");
-
       $('#purchase-belongto').customSelect();
-
-
-
+//        console.log(fileprogress);
+//        console.log(handlers);
         var swfu;
 
 			var settings = {
@@ -62,7 +58,7 @@ require([ "jquery", 'jquery.customSelect' ,'swf/js/swfupload', 'swf/js/fileprogr
 					progressTarget : "fsUploadProgress",
 					cancelButtonId : "btnCancel"
 				},
-				debug: true,
+				//debug: true,
 
 
                  // Button settings
@@ -75,12 +71,13 @@ require([ "jquery", 'jquery.customSelect' ,'swf/js/swfupload', 'swf/js/fileprogr
                  // button_text_left_padding: 12,
                  // button_text_top_padding: 3,
 				// The event handler functions are defined in handlers.js
-				file_queued_handler : handlers.fileQueued,
-				file_queue_error_handler : handlers.fileQueueError,
-				upload_start_handler : handlers.uploadStart,
-				upload_progress_handler : handlers.uploadProgress,
-				upload_error_handler : handlers.uploadError,
-				upload_success_handler : handlers.uploadSuccess
+				//file_queued_handler : handlers.fileQueued,
+                file_queued_handler:handlers.queueComplete
+//				file_queue_error_handler : handlers.fileQueueError,
+//				upload_start_handler : handlers.uploadStart,
+//				upload_progress_handler : handlers.uploadProgress,
+//				upload_error_handler : handlers.uploadError,
+//				upload_success_handler : handlers.uploadSuccess
 			};
 
             swfu = new SWFUpload(settings);

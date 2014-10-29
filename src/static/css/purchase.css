@@ -75,9 +75,9 @@
 
 	width:378px;
 
-	text-indent: 10px!important;
-
 	vertical-align: middle;
+
+    padding-left: 10px;
 }
 
 
@@ -85,7 +85,7 @@
 
 	width:378px;
 
-	text-indent: 10px!important;
+	padding-left: 10px;
 
 }
 
@@ -96,7 +96,7 @@
 
 	min-height:66px;
 
-	text-indent: 10px!important;
+	padding-left: 10px;
 
 }
 
@@ -268,7 +268,7 @@ span.customSelect {
 
 	width:290px;
 
-	margin-top:7px;
+    padding-left: 10px;
 }
 
 

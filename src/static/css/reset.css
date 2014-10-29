@@ -8,7 +8,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     padding: 0; 
     border: none; 
     outline: none; 
-    font:12px/24px Arial , "宋体" , "微软雅黑"; 
+    font:12px/2  Arial , "宋体" , "微软雅黑";
     vertical-align: baseline; 
 } 
 :focus {
@@ -231,9 +231,16 @@ input ,select , textarea ,button{
     border:none;
     border:1px solid #e5e5e5;
 
-    padding:6px auto\9;
+    padding:10px auto\9;
 
 }
+
+.list-form input[type='checkbox'], .list-form input[type='radio']{
+
+    with:8px; height:7px;
+    background: #ffffff;
+}
+
 
 .list-form select option  , .list-form-flt select option{
 
