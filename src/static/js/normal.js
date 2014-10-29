@@ -5,9 +5,9 @@ requirejs.config({
 
 		"jquery":"jquery1.7.2-min.js",
 
-		"dialog":"dialog-min.js"
+		"dialog":"dialog-min.js",
 
-
+        "customSelect":"jquery.customSelect.min.js"
 	},
 
 	"shim":{
@@ -23,7 +23,12 @@ requirejs.config({
 			deps:['jquery'],
 			exports:'Dialog'
 
-		}
+		},
+
+       'customSelect':{
+           deps:['jquery'],
+           exports:"customSelect"
+       }
 
 	}
 

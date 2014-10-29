@@ -1,0 +1,120 @@
+{% extends "index.html" %}
+{% block Title  %}
+我们的--OA
+{% endblock %}
+{% block Style %}
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/purchase.css" media="screen,all"/>
+{% endblock %}
+{% block Uploader %}{% endblock %}
+{% block Content %}
+<div class="main">
+      <div class="mainArea">
+          <ul>
+            <li id="purchase-request" class="purchase-request">
+
+                <h2 class="levelTitle-1"><span class="icon-line-brown"></span>采购申请<span class="instruction">带<i class="red">*</i>为必填项</span><span class="form-order">显示工作流程图</span></h2>
+                <div class="purchase-req-cont">
+                    <fieldset class="purchase-field">
+                        <form class="purchase-form" name="purchase-form">
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-title"><span class="red">*</span>标题：</label></dt>
+                                <dd><input type="text" name="purchase-title" id="purchase-title" placeholder="请示-XXXX-2014-1-1"/></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-man">请示人：</label></dt>
+                                <dd><input type="text" name="purchase-man" id="purchase-man" placeholder="XXX"/></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-department">请示人所在部门：</label></dt>
+                                <dd><input type="text" name="purchase-department" id="purchase-department" placeholder="通用服务部"/></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-belongto">请示所属：</label></dt>
+                                <dd><div class="belongto-render"><select class="styled" name="purchase-belongto" id="purchase-belongto" placeholder="通用服务部">
+                                  <option value="">aaaaaaaaaaaaa</option>
+                                  <option value="">bbbbbbbbbbbbb</option>
+                                  <option value="">ccccccccccccc</option>
+                                  <option value="">ddddddddddddd</option>
+                                  <option value="">eeeeeeeeeeeee</option>
+                                  <option value="">fffffffffffff</option>
+                                </select></div></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-reason">事由：</label></dt>
+                                <dd><textarea name="purchase-reason" id="purchase-reason"></textarea></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-reason">相关流程：</label></dt>
+                                <dd><span class="blueFont btn_add">添加</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-reason">相关附件：</label></dt>
+                                <dd><span  class="icon-btn-azury btn_scan"><i id="add_plugin" class=""></i>浏览</span>未选中文件。<span class="blueFont btn_clear_plugin">[清空]</span>(此目录下最大只能上传15M/个的附件)
+                                       <div id="fsUploadProgress"></div>
+                                </dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-sign">签字：</label></dt>
+                                <dd><input type="text" name="purchase-sign" id="purchase-sign" /></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-sign">物品清单：</label></dt>
+                                <dd><ul><li><span class="icon-btn-azury btn_add"><span class="icon-plus"></span>&nbsp;添加</span><span  class="blueFont btn_delete">删除</span></li></ul>
+                                  <ul id="purchase-pro-add-list">
+                                    <li class="heads">
+                                      <span class="chosen"><input type="checkbox" /></span>
+                                      <span class="pro-name">物品名称</span>
+                                      <span class="pro-type">型号</span>
+                                      <span class="pro-count">数量</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="chosen"><input type="checkbox" /></span>
+                                      <span class="pro-name"><input type="text" name="" /></span>
+                                      <span class="pro-type"><input type="text" name="" /></span>
+                                      <span class="pro-count"><input type="text" name="" /></span>
+                                    </li>
+                                     <li class="item">
+                                      <span class="chosen"><input type="checkbox" /></span>
+                                      <span class="pro-name"><input type="text" name="" /></span>
+                                      <span class="pro-type"><input type="text" name="" /></span>
+                                      <span class="pro-count"><input type="text" name="" /></span>
+                                    </li>
+                                     <li class="item">
+                                      <span class="chosen"><input type="checkbox" /></span>
+                                      <span class="pro-name"><input type="text" name="" /></span>
+                                      <span class="pro-type"><input type="text" name="" /></span>
+                                      <span class="pro-count"><input type="text" name="" /></span>
+                                    </li>
+                                     <li class="item">
+                                      <span class="chosen"><input type="checkbox" /></span>
+                                      <span class="pro-name"><input type="text" name="" /></span>
+                                      <span class="pro-type"><input type="text" name="" /></span>
+                                      <span class="pro-count"><input type="text" name="" /></span>
+                                    </li>
+                                  </ul>
+                                </dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain hidden" for="purchase-sign">返回:</label></dt>
+                                <dd>
+                                  <a href="javascript:void(0)" onclick="" class="icon-btn-blue" data-event="save" data-form="purchase-form">保存</a>
+                                  <a href="javascript:void(0)" onclick="" class="icon-btn-blue" data-event="submit" data-form="purchase-form" >提交</a>
+                                </dd>
+                            </dl>
+                        </form>
+                    </fieldset>
+                </div>
+            </li>
+          </ul>
+        <div id="fixed">
+            <span class="icon-up-white"></span>
+            <span class="icon-up-brown"></span>
+        </div>
+     </div>
+ </div>
+{% endblock %}
+{% block Script %}
+<script src="/static/js/require.js" data-main="/static/js/lib/purchase/upload.js"></script>
+{% endblock %}
