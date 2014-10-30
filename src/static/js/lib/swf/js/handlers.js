@@ -11,17 +11,7 @@ The FileProgress class is not part of SWFUpload.
    package.  They are part of my application.  Without these none
    of the actions SWFUpload makes will show up in my application.
    ********************** */
-define(['swf/js/fileprogress','swf/js/swfupload'],function(FileProgress,SWFUpload){
-
-    var FileProgress = FileProgress;
-
-    var SWFUpload = SWFUpload;
-
- return {
-            fileQueued:function(file) {
-
-
-
+        function fileQueued(file) {
             try {
                 var progress = new FileProgress(file, this.customSettings.progressTarget);
                 progress.setStatus("Pending...");
@@ -31,9 +21,9 @@ define(['swf/js/fileprogress','swf/js/swfupload'],function(FileProgress,SWFUploa
                 this.debug(ex);
             }
 
-        },
+        }
 
-         fileQueueError:function(file, errorCode, message) {
+        function fileQueueError(file, errorCode, message) {
             try {
                 if (errorCode === SWFUpload.QUEUE_ERROR.QUEUE_LIMIT_EXCEEDED) {
                     alert("You have attempted to queue too many files.\n" + (message === 0 ? "You have reached the upload limit." : "You may select " + (message > 1 ? "up to " + message + " files." : "one file.")));
@@ -67,9 +57,9 @@ define(['swf/js/fileprogress','swf/js/swfupload'],function(FileProgress,SWFUploa
             } catch (ex) {
                 this.debug(ex);
             }
-        },
+        }
 
-         uploadStart:function(file) {
+        function uploadStart(file) {
             try {
                 /* I don't want to do any file validation or anything,  I'll just update the UI and
                 return true to indicate that the upload should start.
@@ -83,9 +73,9 @@ define(['swf/js/fileprogress','swf/js/swfupload'],function(FileProgress,SWFUploa
             catch (ex) {}
 
             return true;
-        },
+        }
 
-         uploadProgress:function(file, bytesLoaded, bytesTotal) {
+         function uploadProgress(file, bytesLoaded, bytesTotal) {
             try {
                 var percent = Math.ceil((bytesLoaded / bytesTotal) * 100);
 
@@ -95,9 +85,9 @@ define(['swf/js/fileprogress','swf/js/swfupload'],function(FileProgress,SWFUploa
             } catch (ex) {
                 this.debug(ex);
             }
-        },
+        }
 
-         uploadSuccess:function(file, serverData) {
+        function uploadSuccess(file, serverData) {
             try {
                 var progress = new FileProgress(file, this.customSettings.progressTarget);
                 progress.setComplete();
@@ -107,9 +97,9 @@ define(['swf/js/fileprogress','swf/js/swfupload'],function(FileProgress,SWFUploa
             } catch (ex) {
                 this.debug(ex);
             }
-        },
+        }
 
-         uploadError:function(file, errorCode, message) {
+        function uploadError(file, errorCode, message) {
             try {
                 var progress = new FileProgress(file, this.customSettings.progressTarget);
                 progress.setError();
@@ -155,13 +145,12 @@ define(['swf/js/fileprogress','swf/js/swfupload'],function(FileProgress,SWFUploa
             } catch (ex) {
                 this.debug(ex);
             }
-        },
+        }
 
         // This event comes from the Queue Plugin
-         queueComplete:function(numFilesUploaded) {
+         function queueComplete(numFilesUploaded) {
             var status = document.getElementById("divStatus");
             status.innerHTML = numFilesUploaded + " file" + (numFilesUploaded === 1 ? "" : "s") + " uploaded.";
         }
 
-    };
-});
+

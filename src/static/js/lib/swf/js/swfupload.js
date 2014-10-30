@@ -10,8 +10,6 @@
  * http://www.opensource.org/licenses/mit-license.php
  *
  */
-
-define(function(){
 /* ******************* */
 /* Constructor & Init  */
 /* ******************* */
@@ -1006,7 +1004,4 @@ SWFUpload.Console.writeLine = function (message) {
 	} catch (ex) {
 		alert("Exception: " + ex.name + " Message: " + ex.message);
 	}
-};
-    return SWFUpload;
-
-});
+}

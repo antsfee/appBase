@@ -143,6 +143,19 @@
 	vertical-align: middle;
 }
 
+.icon-btn-delete{
+
+    display: inline-block;
+
+	width: 7px; height: 7px;
+
+	background: url(../img/static_all_icon.png) no-repeat -0px -177px;
+
+	cursor:pointer;
+	vertical-align: middle;
+
+}
+
 
 /* icon set end  */
 
@@ -385,3 +398,102 @@
 	cursor: pointer;
 
 }
+
+/* 上传时候的各个附件上传*/
+
+#fsUploadProgress .progressWrapper{
+     position: relative;
+    display: inline-block;
+    -webkit-border-radius:2px;
+        -moz-border-radius:2px;
+         -ms-border-radius:2px;
+          -o-border-radius:2px;
+              border-radius:2px;
+    margin:9px auto 8px 7px;
+
+    border:1px solid #f7f4f4;
+
+    -webkit-transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+	-moz-transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+	-ms-transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+	-o-transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+		transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+
+    /*background-image:-moz-linear-gradient(top,#fcfcfc ,  #e8eaea);*/
+    /*background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0, #fcfcfc), color-stop(1, #e8eaea));*/
+    /*-ms-filter:"progid:DXImageTransform.Microsoft.gradient(StartColorStr='#fcfcfc ', EndColorStr='#e8eaea')";*/
+    /*filter:progid:DXImageTransform.Microsoft.gradient(StartColorStr='#fcfcfc ', EndColorStr='#e8eaea',Direction=90);*/
+}
+
+#fsUploadProgress .progressWrapper.none{
+
+    display: none;
+
+
+}
+
+
+#fsUploadProgress .progressWrapper:first-child{
+    margin-left:0px;
+}
+ .progressWrapper  .progressContainer{
+
+    position: relative;
+
+}
+.progressWrapper .progressName{
+
+    display: inline-block;
+
+    vertical-align: middle;
+
+    padding:3px 8px;
+
+    overflow: hidden;
+
+    color:#999999;
+}
+
+.progressWrapper .progressBarStatus{
+
+    display: inline-block;
+
+    width:20%;
+
+    vertical-align: middle;
+}
+
+.progressWrapper  .progressBarInProgress{
+
+    display: inline-block;
+    width:60%;
+    vertical-align: middle;
+    overflow:hidden;
+}
+
+.progressWrapper .progressCancel{
+
+    display: inline-block;
+
+    position: absolute ;
+
+    width: 7px ; height: 7px;
+
+    right: 2px; top: 2px;
+
+	background: url(../img/static_all_icon.png) no-repeat -0px -177px;
+
+	cursor: pointer;
+
+	vertical-align: middle;
+
+    z-index:2;
+
+
+}
+
+.list-form-flt .memo{
+
+       color:#999999;
+}
+
