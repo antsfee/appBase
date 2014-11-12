@@ -1,0 +1,127 @@
+{% extends "base_layout.html" %}
+{% block Title  %}
+{{title}}
+{% endblock %}
+{% block Style %}
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/vacation.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.validator.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.datetimepicker.css" media="screen,all"/>
+{% endblock %}
+{% block Uploader %}{% endblock %}
+{% block Content %}
+<div class="main">
+      <div class="mainArea">
+          <ul>
+            <li  class="flow-request">
+                <h2 class="levelTitle-1"><span class="icon-line-brown"></span>请假<span class="instruction">带<i class="red">*</i>为必填项</span><span class="form-order">显示工作流程图</span></h2>
+                <div class="flow-req-cont">
+                    <fieldset class="flow-field">
+                        <form class="flow-form" name="vacation-form">
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="vacation-title"><span class="red">*</span>标题：</label></dt>
+                                <dd><span class="state-wait-sure">请示xxx-202414</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="vacation-man">请示人：</label></dt>
+                                <dd><span class="state-wait-sure">请示人</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="vacation-department">请示人所在部门：</label></dt>
+                                <dd><span class="state-wait-sure">请示人所在部门</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="vacation-belongto">请示所属：</label></dt>
+                                <dd><span class="state-wait-sure">请示所属</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="vacation-startime">时间：</label></dt>
+                                <dd>
+                                    <span class="state-wait-sure">开始时间</span>
+                                    <span class="gap-time">至</span>
+                                    <span class="state-wait-sure">结束时间</span>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="vacation-count">请假天数：</label></dt>
+                                <dd><span class="state-wait-sure">3</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="vacation-reason">事由：</label></dt>
+                                <dd><span class="state-wait-sure">什么原因</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="vacation-sign">签字：</label></dt>
+                                <dd><span class="state-wait-sure">X--XX-XX</span></dd>
+                            </dl>
+                           <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="vacation-remark">备注：</label></dt>
+                                <dd><span class="state-wait-sure">备注</span></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><span class="formExplain hidden">操作:</span></dt>
+                                <dd>
+                                    <a class="icon-btn-gray" data-event="return" data-selector="form.flow-form">返回</a>
+                                    <a class="icon-btn-blue" data-event="agree" data-selector="form.flow-form">同意</a>
+                                    <a class="icon-btn-blue" data-event="disagree" data-selector="form.flow-form">不同意</a>
+                                </dd>
+                            </dl>
+                        </form>
+                    </fieldset>
+                </div>
+            </li>
+             <li  class="flow-request">
+                   <ul id="oa-flow-table" class="oa-flow-table flow-progress">
+                                    <li class="heads">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate"><span class="redFont">申请不通过</span></span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                  </ul>
+            </li>
+          </ul>
+        <div id="fixed">
+            <span class="icon-up-white"></span>
+            <span class="icon-up-brown"></span>
+        </div>
+     </div>
+ </div>
+{% endblock %}
+{% block Script %}
+<script src="/static/js/require.js" data-main="/static/js/lib/vacation/approve.js"></script>
+{% endblock %}

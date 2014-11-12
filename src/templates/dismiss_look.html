@@ -1,0 +1,139 @@
+{% extends "base_layout.html" %}
+{% block Title  %}
+{{title}}
+{% endblock %}
+{% block Style %}
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/dismiss.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.validator.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.datetimepicker.css" media="screen,all"/>
+{% endblock %}
+{% block Content %}
+<div class="main">
+      <div class="mainArea">
+          <ul>
+            <li id="purchase-request" class="flow-request">
+                <h2 class="levelTitle-1"><span class="icon-line-brown"></span>转正申请<span class="instruction">带<i class="red">*</i>为必填项</span><span class="form-order">显示工作流程图</span></h2>
+                <div class="flow-req-cont">
+                    <fieldset class="purchase-field">
+                        <form class="purchase-form" name="flow-form">
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-title"><span class="red">*</span>标题：</label></dt>
+                                <dd><span class="state-wait-sure"> 请示-XXXX-2014-1-1</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-man">申请人：</label></dt>
+                                <dd><span class="state-wait-sure">某某</span></dd>
+                            </dl>
+                               <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-dismiss-type"><span class="red">*</span>拟辞退人员所属类别：</label></dt>
+                                <dd><span class="state-wait-sure">泪奔</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-department"><span class="red">*</span>请示人所在部门：</label></dt>
+                                <dd><span class="state-wait-sure">通用服务部门</span> </dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-dismiss-commitTime"><span class="red">*</span>提交时期：</label></dt>
+                                <dd><span class="state-wait-sure">2014-09-01</span> </dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-hire-name"><span class="red">*</span>拟辞退人员名称：</label></dt>
+                                <dd>
+                                    <span class="state-wait-sure">某某</span>
+                                </dd>
+                            </dl>
+                           <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-dismiss-position"><span class="red">*</span>拟辞退人员岗位：</label></dt>
+                                <dd><span class="state-wait-sure">某岗位</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-dismiss-startime"><span class="red">*</span>到岗时间：</label></dt>
+                                <dd><span class="state-wait-sure">2014-15-145</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-dismiss-reason"><span class="red">*</span>辞退原因：</label></dt>
+                               <dd><span class="state-wait-sure">元婴元婴原因</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-dismiss-workList">交接文件清单：</label></dt>
+                                <dd><span class="state-wait-sure">这是传说中的交接清单</span></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-dismiss-fileList">交接文件：</label></dt>
+                                <dd class="memo">
+                                    <p class="blueFont">附件一.doc</p>
+                                    <p class="blueFont">附件一.doc</p>
+                                    <p class="blueFont">附件一.doc</p>
+                                </dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-sign">签字：</label></dt>
+                              <dd><span class="state-wait-sure">签字默默</span></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain hidden">操作:</label></dt>
+                                <dd>
+                                  <a href="javascript:void(0);"  class="icon-btn-gray" data-event="return" data-selector="form.purchase-form" >返回</a>
+                                </dd>
+                            </dl>
+                        </form>
+                    </fieldset>
+                </div>
+            </li>
+             <li  class="flow-request">
+                   <ul id="oa-flow-table" class="oa-flow-table flow-progress">
+                                    <li class="heads">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate"><span class="redFont">申请不通过</span></span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                  </ul>
+            </li>
+          </ul>
+        <div id="fixed">
+            <span class="icon-up-white"></span>
+            <span class="icon-up-brown"></span>
+        </div>
+     </div>
+ </div>
+{% endblock %}
+{% block Script %}
+<script src="/static/js/require.js" data-main="/static/js/lib/dismiss/look.js"></script>
+{% endblock %}

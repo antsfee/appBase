@@ -1,0 +1,121 @@
+{% extends "base_layout.html" %}
+{% block Title  %}
+{{title}}
+{% endblock %}
+{% block Style %}
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/become.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.validator.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.datetimepicker.css" media="screen,all"/>
+{% endblock %}
+{% block Uploader %}
+{% endblock %}
+{% block Content %}
+<div class="main">
+      <div class="mainArea">
+          <ul>
+            <li id="purchase-request" class="flow-request">
+                <h2 class="levelTitle-1"><span class="icon-line-brown"></span>转正申请<span class="instruction">带<i class="red">*</i>为必填项</span><span class="form-order">显示工作流程图</span></h2>
+                <div class="flow-req-cont">
+                    <fieldset class="purchase-field">
+                        <form class="purchase-form" name="flow-form">
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-title"><span class="red">*</span>标题：</label></dt>
+                                <dd><input type="text" name="flow-title" id="flow-title"   placeholder="请示-XXXX-2014-1-1" required /></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-man">申请人：</label></dt>
+                                <dd><input type="text" name="flow-man" id="flow-man" /></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-department">请示人所在部门：</label></dt>
+                                <dd><input type="text" name="flow-department" id="flow-department" /></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-hire-name"><span class="red">*</span>拟转正人员姓名：</label></dt>
+                                <dd>
+                                    <input type="text" name="flow-become-name" id="flow-become-name" placeholder="被转正人员姓名" required />
+                                </dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-department"><span class="red">*</span>拟转正人员所在部门：</label></dt>
+                                <dd><div class="belongto-render" ><select name="flow-become-department" id="flow-become-department" required>
+                                    <option>2</option>
+                                    <option>2</option>
+                                    <option>2</option>
+                                    <option>2</option>
+                                    <option>2</option>
+                                </select></div></dd>
+                            </dl>
+                           <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-become-position"><span class="red">*</span>拟转正人员岗位：</label></dt>
+                                <dd><div class="belongto-render" ><select name="flow-become-position" id="flow-become-position" required>
+                                    <option>2</option>
+                                    <option>2</option>
+                                    <option>2</option>
+                                    <option>2</option>
+                                    <option>2</option>
+                                </select></div></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-become-endtime"><span class="red">*</span>试用期结束时间：</label></dt>
+                                <dd>
+                                   <div class="input-time-box">
+                                        <input type="text" name="flow-become-endtime" id="flow-become-endtime" placeholder="试用期结束时间" required />
+                                        <span class="icon-calendar icon-time-button"></span>
+                                   </div>
+                                </dd>
+                            </dl>
+                           <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-become-position"><span class="red">*</span>人员所属类别：</label></dt>
+                                <dd><div class="belongto-render" ><select name="flow-become-type" id="flow-become-type" required>
+                                    <option>flow-become-type 1</option>
+                                    <option>flow-become-type 2</option>
+                                    <option>flow-become-type 3</option>
+                                    <option>flow-become-type 4</option>
+                                    <option>flow-become-type 5</option>
+                                </select></div></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-become-checkinTime"><span class="red">*</span>报到时间：</label></dt>
+                                <dd>
+                                     <div class="input-time-box">
+                                        <input type="text" name="flow-become-checkinTime" id="flow-become-checkinTime" placeholder="报到时间" required />
+                                         <span class="icon-calendar icon-time-button"></span>
+                                     </div>
+                                </dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-become-evaluate"><span class="red">*</span>试用期期间评价：</label></dt>
+                                <dd><textarea name="flow-become-evaluate" id="flow-become-evaluate" required></textarea></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-remark">备注：</label></dt>
+                                <dd><textarea name="flow-remark" id="flow-remark"></textarea></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-sign">签字：</label></dt>
+                                <dd><input type="text" name="flow-sign" id="flow-sign" /></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain hidden" for="purchase-sign">返回:</label></dt>
+                                <dd>
+                                  <a href="javascript:void(0);"  class="icon-btn-blue" data-event="sure2" data-selector="form.purchase-form" >确认</a>
+                                </dd>
+                            </dl>
+                        </form>
+                    </fieldset>
+                </div>
+            </li>
+          </ul>
+        <div id="fixed">
+            <span class="icon-up-white"></span>
+            <span class="icon-up-brown"></span>
+        </div>
+     </div>
+ </div>
+{% endblock %}
+{% block Script %}
+<script src="/static/js/require.js" data-main="/static/js/lib/become/sure2.js"></script>
+{% endblock %}

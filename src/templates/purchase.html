@@ -1,11 +1,12 @@
-{% extends "index.html" %}
+{% extends "base_layout.html" %}
 {% block Title  %}
-我们的--OA
+{{title}}
 {% endblock %}
 {% block Style %}
 <link rel="stylesheet" type="text/css" href="/static/css/reset.css" media="screen,all"/>
 <link rel="stylesheet" type="text/css" href="/static/css/common.css" media="screen,all"/>
 <link rel="stylesheet" type="text/css" href="/static/css/purchase.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.validator.css" media="screen,all"/>
 {% endblock %}
 {% block Uploader %}
 <script type="text/javascript" src="/static/js/lib/swf/js/swfupload.js"></script>
@@ -16,7 +17,8 @@
   var swfu ;
         window.onload=function(){
 			var settings = {
-				flash_url : "/static/js/lib/swf/swfupload.swf",
+                flash_url : "/static/js/lib/swf/swfupload.swf",
+				flash9_url : "/static/js/lib/swf/swfupload_fp9.swf",
 				upload_url: "/upload",
 				post_params: {"PHPSESSID" : "23424"},
 				file_size_limit : "100 MB",
@@ -28,26 +30,25 @@
 					progressTarget : "fsUploadProgress",
 					cancelButtonId : "btnCancel"
 				},
-
 			    // debug: true,
-
-
                  // Button settings
-                 button_image_url: "/static/img/bkpng.png",
-                 button_width: "81",
+                button_image_url: "/static/img/bkpng.png",
+                 button_width: "80",
                  button_height: "31",
                  button_placeholder_id: "add_plugin",
-                 // button_text: '',
-                 // button_text_style: "",
-                 // button_text_left_padding: 12,
-                 // button_text_top_padding: 3,
+                  button_text: '<span class="icon-btn-azury btn-scan"></span>',
+                  button_text_style: ".btn-scan{ color:#2E5DA6;font-weight:bold; }",
+                  button_text_left_padding: 0,
+                  button_text_top_padding: 0,
 				// The event handler functions are defined in handlers.js
-				file_queued_handler:    fileQueued
-//				file_queue_error_handler : handlers.fileQueueError,
-//				upload_start_handler : handlers.uploadStart,
-//				upload_progress_handler : handlers.uploadProgress,
-//				upload_error_handler : handlers.uploadError,
-//				upload_success_handler : handlers.uploadSuccess
+	            swfupload_preload_handler : preLoad,
+				swfupload_load_failed_handler : loadFailed,
+				file_queued_handler : fileQueued,
+				file_queue_error_handler : fileQueueError,
+				upload_start_handler : uploadStart,
+				upload_progress_handler : uploadProgress,
+				upload_error_handler : uploadError,
+				upload_success_handler : uploadSuccess
 			};
 
             swfu = new SWFUpload(settings);
@@ -78,14 +79,13 @@
       <div class="mainArea">
           <ul>
             <li id="purchase-request" class="purchase-request">
-
                 <h2 class="levelTitle-1"><span class="icon-line-brown"></span>采购申请<span class="instruction">带<i class="red">*</i>为必填项</span><span class="form-order">显示工作流程图</span></h2>
                 <div class="purchase-req-cont">
                     <fieldset class="purchase-field">
                         <form class="purchase-form" name="purchase-form">
                             <dl class="list-form-flt">
                                 <dt><label class="formExplain" for="purchase-title"><span class="red">*</span>标题：</label></dt>
-                                <dd><input type="text" name="purchase-title" id="purchase-title" placeholder="请示-XXXX-2014-1-1"/></dd>
+                                <dd><input type="text" name="purchase-title" id="purchase-title" required  placeholder="请示-XXXX-2014-1-1"/></dd>
                             </dl>
                              <dl class="list-form-flt">
                                 <dt><label class="formExplain" for="purchase-man">请示人：</label></dt>
@@ -126,34 +126,34 @@
                             </dl>
                             <dl class="list-form-flt">
                                 <dt><label class="formExplain" for="purchase-sign">物品清单：</label></dt>
-                                <dd><ul><li><span class="icon-btn-azury btn_add"><span class="icon-plus"></span>&nbsp;添加</span><span  class="blueFont btn_delete">删除</span></li></ul>
-                                  <ul id="purchase-pro-add-list">
+                                <dd><ul id="purchase-pro-action-bar"><li><span class="icon-btn-azury btn_add"><span class="icon-plus"></span>&nbsp;添加</span><span  class="blueFont btn_delete">删除</span></li></ul>
+                                  <ul id="purchase-pro-add-list" class="oa-flow-table purchase-pro">
                                     <li class="heads">
-                                      <span class="chosen"><input type="checkbox" /></span>
+                                      <span class="chosen"><i class="checkbox" data-event="select-all" data-selector="#purchase-pro-add-list .item"></i></span>
                                       <span class="pro-name">物品名称</span>
                                       <span class="pro-type">型号</span>
                                       <span class="pro-count">数量</span>
                                     </li>
                                     <li class="item">
-                                      <span class="chosen"><input type="checkbox" /></span>
+                                      <span class="chosen"><i class="checkbox"></i></span>
                                       <span class="pro-name"><input type="text" name="" /></span>
                                       <span class="pro-type"><input type="text" name="" /></span>
                                       <span class="pro-count"><input type="text" name="" /></span>
                                     </li>
                                      <li class="item">
-                                      <span class="chosen"><input type="checkbox" /></span>
+                                      <span class="chosen"><i class="checkbox"></i></span>
                                       <span class="pro-name"><input type="text" name="" /></span>
                                       <span class="pro-type"><input type="text" name="" /></span>
                                       <span class="pro-count"><input type="text" name="" /></span>
                                     </li>
                                      <li class="item">
-                                      <span class="chosen"><input type="checkbox" /></span>
+                                      <span class="chosen"><i class="checkbox"></i></span>
                                       <span class="pro-name"><input type="text" name="" /></span>
                                       <span class="pro-type"><input type="text" name="" /></span>
                                       <span class="pro-count"><input type="text" name="" /></span>
                                     </li>
                                      <li class="item">
-                                      <span class="chosen"><input type="checkbox" /></span>
+                                      <span class="chosen"><i class="checkbox"></i></span>
                                       <span class="pro-name"><input type="text" name="" /></span>
                                       <span class="pro-type"><input type="text" name="" /></span>
                                       <span class="pro-count"><input type="text" name="" /></span>
@@ -164,8 +164,8 @@
                               <dl class="list-form-flt">
                                 <dt><label class="formExplain hidden" for="purchase-sign">返回:</label></dt>
                                 <dd>
-                                  <a href="javascript:void(0)" onclick="" class="icon-btn-blue" data-event="save" data-form="purchase-form">保存</a>
-                                  <a href="javascript:void(0)" onclick="" class="icon-btn-blue" data-event="submit" data-form="purchase-form" >提交</a>
+                                  <a  class="icon-btn-blue" data-event="save" data-selector="form.purchase-form">保存</a>
+                                  <a  class="icon-btn-blue" data-event="submit" data-selector="form.purchase-form" >提交</a>
                                 </dd>
                             </dl>
                         </form>

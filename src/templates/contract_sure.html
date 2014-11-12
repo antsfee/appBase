@@ -1,0 +1,129 @@
+{% extends "base_layout.html" %}
+{% block Title  %}
+{{title}}
+{% endblock %}
+{% block Style %}
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/contract.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.validator.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.datetimepicker.css" media="screen,all"/>
+{% endblock %}
+{% block Content %}
+<div class="main">
+      <div class="mainArea">
+          <ul>
+            <li  class="flow-request">
+                <h2 class="levelTitle-1"><span class="icon-line-brown"></span>请假<span class="instruction">带<i class="red">*</i>为必填项</span><span class="form-order">显示工作流程图</span></h2>
+                <div class="flow-req-cont">
+                    <fieldset class="flow-field">
+                        <form class="flow-form" name="vacation-form">
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-title"><span class="red">*</span>标题：</label></dt>
+                                <dd><span class="state-wait-sure">XXX标题</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-man">请示人：</label></dt>
+                                <dd><span class="state-wait-sure">XXX</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="vacation-department">申请人所在部门：</label></dt>
+                                <dd><span class="state-wait-sure">通用服务部门</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-contract-type"><span class="red">*</span>合同类型：</label></dt>
+                                <dd><span class="state-wait-sure">请选择</span></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-contract-ammount">合同金额：</label></dt>
+                                <dd><span class="state-wait-sure">345545</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-contract-time">时间范围：</label></dt>
+                                <dd><span class="state-wait-sure">2014-08-15 至  2014-07-26</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-contract-project">相关项目：</label></dt>
+                               <dd><span class="state-wait-sure">XXXX</span></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-contract-doc">合同文档：</label></dt>
+                                <dd class="memo">
+                                    <p class="blueFont">附件一.doc</p>
+                                    <p class="blueFont">附件一.doc</p>
+                                    <p class="blueFont">附件一.doc</p>
+                                </dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-contract-contract">相关合同：</label></dt>
+                                <dd>和统一和统一</dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-sign">签名：</label></dt>
+                                <dd><span class="state-wait-sure">XXX</span></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><span class="formExplain hidden">操作:</span></dt>
+                                <dd>
+                                 <a href="javascript:void(0);" class="icon-btn-blue" data-event="sure" data-selector="form.flow-form">确认</a>
+                                </dd>
+                            </dl>
+                        </form>
+                    </fieldset>
+                </div>
+            </li>
+          <li class="flow-request">
+                   <ul id="oa-flow-table" class="oa-flow-table flow-progress">
+                                    <li class="heads">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate"><span class="redFont">申请不通过</span></span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                  </ul>
+            </li>
+          </ul>
+        <div id="fixed">
+            <span class="icon-up-white"></span>
+            <span class="icon-up-brown"></span>
+        </div>
+     </div>
+ </div>
+{% endblock %}
+{% block Script %}
+<script src="/static/js/require.js" data-main="/static/js/lib/contract/fill.js"></script>
+{% endblock %}

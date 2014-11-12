@@ -1,0 +1,142 @@
+{% extends "base_layout.html" %}
+{% block Title  %}
+{{title}}
+{% endblock %}
+{% block Style %}
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/become.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.validator.css" media="screen,all"/>
+{% endblock %}
+{% block Uploader %}
+{% endblock %}
+{% block Content %}
+<div class="main">
+      <div class="mainArea">
+          <ul>
+            <li id="purchase-request" class="flow-request">
+                <h2 class="levelTitle-1"><span class="icon-line-brown"></span>转正申请<span class="instruction">带<i class="red">*</i>为必填项</span><span class="form-order">显示工作流程图</span></h2>
+                <div class="flow-req-cont">
+                    <fieldset class="purchase-field">
+                        <form class="purchase-form" name="flow-form">
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-title"><span class="red">*</span>标题：</label></dt>
+                                <dd><span class="state-wait-sure">请示-XXXX-2014-1-1</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-man">申请人：</label></dt>
+                                <dd><span class="state-wait-sure">某某</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-department">请示人所在部门：</label></dt>
+                                <dd><span class="state-wait-sure">XXX</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-hire-name"><span class="red">*</span>拟转正人员姓名：</label></dt>
+                                <dd>
+                                    <span class="state-wait-sure">张三刘</span>
+                                </dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-department"><span class="red">*</span>拟转正人员所在部门：</label></dt>
+                                <dd><span class="state-wait-sure">通用服务部</span></dd>
+                            </dl>
+                           <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-become-position"><span class="red">*</span>拟转正人员岗位：</label></dt>
+                                <dd><span class="state-wait-sure">产品设计师</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-become-endtime"><span class="red">*</span>试用期结束时间：</label></dt>
+                                <dd><span class="state-wait-sure">2015-07-01</span></dd>
+                            </dl>
+                           <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-become-position"><span class="red">*</span>人员所属类别：</label></dt>
+                                <dd><span class="state-wait-sure">qingsuanze</span></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-become-checkinTime"><span class="red">*</span>报到时间：</label></dt>
+                                <dd><span class="state-wait-sure">2014-08-08</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-become-evaluate"><span class="red">*</span>试用期期间评价：</label></dt>
+                                <dd><span class="state-wait-sure">这个是试用期的评价评价评价评价评价</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-remark">备注：</label></dt>
+                                <dd><span class="state-wait-sure">备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-sign">签字：</label></dt>
+                                <dd><span class="state-wait-sure">签个字签个字签个字签个字签个字签个字</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-advice">意见：</label></dt>
+                                <dd><textarea name="flow-advice" id="advice"></textarea></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain hidden">操作:</label></dt>
+                                <dd>
+                                  <a href="javascript:void(0);"  class="icon-btn-gray" data-event="return" data-selector="form.purchase-form" >返回</a>
+                                  <a href="javascript:void(0);"  class="icon-btn-blue" data-event="agree" data-selector="form.purchase-form" >同意</a>
+                                  <a href="javascript:void(0);"  class="icon-btn-blue" data-event="disagree" data-selector="form.purchase-form" >不同意</a>
+                                </dd>
+                            </dl>
+                        </form>
+                    </fieldset>
+                </div>
+            </li>
+              <li  class="flow-request">
+                   <ul id="oa-flow-table" class="oa-flow-table flow-progress">
+                                    <li class="heads">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate"><span class="redFont">申请不通过</span></span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                  </ul>
+            </li>
+          </ul>
+        <div id="fixed">
+            <span class="icon-up-white"></span>
+            <span class="icon-up-brown"></span>
+        </div>
+     </div>
+ </div>
+{% endblock %}
+{% block Script %}
+<script src="/static/js/require.js" data-main="/static/js/lib/become/approve.js"></script>
+{% endblock %}

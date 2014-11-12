@@ -1,0 +1,135 @@
+{% extends "base_layout.html" %}
+{% block Title  %}
+{{title}}
+{% endblock %}
+{% block Style %}
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/askfor.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.validator.css" media="screen,all"/>
+{% endblock %}
+{% block Uploader %}
+{% endblock %}
+{% block Content %}
+<div class="main">
+      <div class="mainArea">
+          <ul>
+            <li id="purchase-request" class="flow-request">
+                <h2 class="levelTitle-1"><span class="icon-line-brown"></span>请示<span class="instruction">带<i class="red">*</i>为必填项</span><span class="form-order">显示工作流程图</span></h2>
+                <div class="flow-req-cont">
+                    <fieldset class="purchase-field">
+                        <form class="purchase-form" name="flow-form">
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-title"><span class="red">*</span>标题：</label></dt>
+                                <dd><span class="state-wait-sure">请示-陈志勇-2014-08-25</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-man">请示人：</label></dt>
+                                <dd><span class="state-wait-sure">请示人陈志远</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-belongto">请示人所在部门：</label></dt>
+                                <dd><span class="state-wait-sure">通用部门</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-fee"><span class="red">*</span>是否涉及费用：</label></dt>
+                                <dd>
+                                    <span class="radio-box"><input type="radio" name="flow-fee" value="nofee" checked>不涉及</span>
+                                    <span class="radio-box"><input type="radio" name="flow-fee" value="fee">涉及</span>
+                                </dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-fee"><span class="red">*</span>请示对象：</label></dt>
+                                <dd>
+                                    <span class="state-wait-sure">张三、李四</span>
+                                </dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-reason"><span class="red">*</span>请示内容：</label></dt>
+                                <dd><span class="state-wait-sure">请示的内容伯翰了很多我们一起来瞅瞅，我们想搞一搞什么那，就是请求内容，要不怎样，要不就这岸。</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="referpro">相关项目：</label></dt>
+                                <dd><span class="state-wait-sure">项目一、项目二、项目三</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="refer-flow">相关流程：</label></dt>
+                                <dd>流程一、流程儿、流程三</dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-reason">相关附件：</label></dt>
+                                <dd class="memo">
+                                    <p class="blueFont">附件一.doc</p>
+                                    <p class="blueFont">附件一.doc</p>
+                                    <p class="blueFont">附件一.doc</p>
+                                </dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-sign">签字：</label></dt>
+                                <dd><span class="state-wait-sure">签名字啊</span></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain hidden" for="purchase-sign">返回:</label></dt>
+                                <dd>
+                                  <a href="javascript:void(0);" class="icon-btn-gray" data-event="return" data-selector="form.flow-form">返回</a>
+                                </dd>
+                            </dl>
+                        </form>
+                    </fieldset>
+                </div>
+            </li>
+               <li  class="flow-request">
+                   <ul id="oa-flow-table" class="oa-flow-table flow-progress">
+                                    <li class="heads">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate"><span class="redFont">申请不通过</span></span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                  </ul>
+            </li>
+          </ul>
+        <div id="fixed">
+            <span class="icon-up-white"></span>
+            <span class="icon-up-brown"></span>
+        </div>
+     </div>
+ </div>
+{% endblock %}
+{% block Script %}
+<script src="/static/js/require.js" data-main="/static/js/lib/askfor/look.js"></script>
+{% endblock %}

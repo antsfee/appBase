@@ -1,16 +1,18 @@
 /* purchase request begin */
 
-.purchase-request{
+.purchase-request , .flow-request {
 
 	margin-top:34px;
 
 }
 
-.purchase-req-cont{
+.purchase-req-cont , .flow-req-cont{
 
 	background: url(../img/gry_whit_bg.jpg) repeat-x center top;
 
 	border:1px solid #f9f9f9;
+
+    border-bottom:1px dashed #d0d0d0;
 
 	border-top:none;
 
@@ -19,18 +21,8 @@
 }
 
 
-.purchase-request .purchase-field{
 
-
-
-
-
-
-
-}
-
-
-.purchase-request .list-form-flt{
+.purchase-request .list-form-flt , .flow-request .list-form-flt{
 
 		margin-bottom: 14px;
 
@@ -38,7 +30,15 @@
 }
 
 
-.purchase-request .list-form-flt dt{
+.purchase-request .list-form-flt:last-child,.purchase-request .list-form-flt.last  ,.flow-request .list-form-flt:last-child,.flow-request .list-form-flt.last {
+
+		margin-bottom: 99px;
+
+        margin-top:44px;
+}
+
+
+.purchase-request .list-form-flt dt , .flow-request .list-form-flt dt{
 
 	width:135px;
 
@@ -46,16 +46,16 @@
 
 }
 
-.purchase-request .list-form-flt dd{
+.purchase-request .list-form-flt dd , .flow-request .list-form-flt dd{
 
 	padding-left:9px;	
 
     max-width:1011px;
 }
 
-.purchase-request .list-form-flt .formExplain{
+.purchase-request .list-form-flt .formExplain , .flow-request .list-form-flt .formExplain , .flow-request .list-form-flt .state-wait-sure{
 
-	font:12px/26px Arial, "微软雅黑";
+	font:12px/26px  Arial,"Microsoft YaHei" ,"微软雅黑",STxihei;
 
 	color:#555555;
 
@@ -65,14 +65,14 @@
 
 
 
-.purchase-request .list-form-flt a[class^="icon-btn"]{
+.purchase-request .list-form-flt a[class^="icon-btn"] , .flow-request .list-form-flt a[class^="icon-btn"]{
 
 	margin-right: 29px;
 
 }
 
 
-.purchase-request .list-form-flt  input{
+.purchase-request .list-form-flt  input[type="text"],.flow-request .list-form-flt  input[type="password"],.flow-request .list-form-flt  input[type="text"],.flow-request .list-form-flt  input[type="password"]{
 
 	width:378px;
 
@@ -82,7 +82,7 @@
 }
 
 
-.purchase-request .list-form-flt  select{
+.purchase-request .list-form-flt  select ,.flow-request .list-form-flt  select{
 
 	width:378px;
 
@@ -91,7 +91,7 @@
 }
 
 
-.purchase-request .list-form-flt  textarea{
+.purchase-request .list-form-flt  textarea , .flow-request .list-form-flt  textarea{
 
 	width:915px;
 
@@ -101,7 +101,13 @@
 
 }
 
-#purchase-request .table-gray{
+.flow-request.purchase-approve  textarea.advice{
+
+    width:1009px;
+
+}
+
+.purchase-request .table-gray  , .flow-request .table-gray{
 
 	width:800px;
 
@@ -109,29 +115,27 @@
 
 }
 
-#purchase-request .btn_add{
+.purchase-request .btn_add , .flow-request .btn_add{
 
 	color:#1273ea;
-
-	margin-right:10px;
 
 	cursor:pointer;
 
 }
 
-#purchase-request .btn_scan {
+.purchase-request .btn_scan , .flow-request .btn_scan {
 
 	color:#2e5da6;
 	margin-right:10px;
 }
 
-#purchase-request .btn_clear_plugin{
+.purchase-request .btn_clear_plugin , .flow-request .btn_clear_plugin{
 
 	margin:auto 16px auto 25px;
 	cursor: pointer;
 }	
 
-#purchase-request .btn_add_plugin{
+.purchase-request .btn_add_plugin , .flow-request .btn_add_plugin{
 
 	margin-right:8px;
 
@@ -150,15 +154,10 @@ span.customSelect {
     border-radius: 2px 2px;
     width:358px;
     height:26px;
-
-    /*background-image:-moz-linear-gradient(top, #e8eaea, #fcfcfc);
-    background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0, #e8eaea), color-stop(1, #fcfcfc));
-    -ms-filter:"progid:DXImageTransform.Microsoft.gradient(StartColorStr='#e8eaea', EndColorStr='#fcfcfc')";
-    filter:progid:DXImageTransform.Microsoft.gradient(StartColorStr='#e8eaea', EndColorStr='#fcfcfc');*/
 }
 
 
-#purchase-request .belongto-render{
+#purchase-request .belongto-render , .flow-request .belongto-render{
 
 	width:378px;
 
@@ -167,7 +166,7 @@ span.customSelect {
 
 
 
-#purchase-request .belongto-render select  option{
+#purchase-request .belongto-render select  option , .flow-request .belongto-render select  option{
 
 	height: 26px;
 
@@ -180,21 +179,36 @@ span.customSelect {
 }
 
 
-#purchase-request .btn_delete{
+#purchase-request .btn_delete , .flow-request .btn_delete{
 
 	cursor: pointer;
+
+    display: inline-block;
+
+    margin-left:10px;
 }
 
 
-#purchase-pro-add-list{
-
+#purchase-pro-add-list.oa-flow-table {
 	clear:both;
 	width:1011px;
 	margin-left:0px;
 	margin-top:11px;
 }
 
-#purchase-pro-add-list li{
+ .oa-flow-table{
+
+     width:100%;
+ }
+
+ .oa-flow-table span{
+
+    font:12px/40px "Microsoft YaHei" ,"微软雅黑",STxihei;
+
+ }
+
+
+.oa-flow-table li{
 
 	
 	font-size: 0px;
@@ -207,13 +221,12 @@ span.customSelect {
 
 }
 
-#purchase-pro-add-list li:nth-child(odd){
+.oa-flow-table li:nth-child(odd),#purchase-pro-add-list li.odd{
 
 	background: #f8f8f8;
 
 }
-
-#purchase-pro-add-list .heads{
+.oa-flow-table .heads{
 
 	background:#eaecef!important;
 
@@ -221,76 +234,246 @@ span.customSelect {
 
 	font-weight: bold;
 
-	font-family: "微软雅黑";
+	font-family:"Microsoft YaHei" ,"微软雅黑",STxihei;
+
 
 }
 
 
-#purchase-pro-add-list  span{
+.oa-flow-table  span{
 
 	display: inline-block;
 
 	height:40px; line-height: 40px;
 
+    vertical-align: middle;
 }
 
-#purchase-pro-add-list  .chosen{
+.oa-flow-table  .chosen{
 
 	width:52px;
 
+    vertical-align: middle;
+
+    ;
+
 }
 
-#purchase-pro-add-list .pro-name{
+.oa-flow-table  .chosen .checkbox{
+
+    display: inline-block;
+
+    width:16px; height:16px;
+
+    margin-left:17px;
+
+    margin-top:13px;
+    
+    background: url("/static/img/static_all_icon.png") no-repeat -0px -203px;
+
+    -webkit-transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+	-moz-transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+	-ms-transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+	-o-transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+		transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+
+}
+
+.oa-flow-table.purchase-offer-list{
+
+       margin-top:25px;
+
+}
+
+
+
+.oa-flow-table  .chosen.selected .checkbox{
+
+      background: url("/static/img/static_all_icon.png") no-repeat -0px -219px;
+
+}
+
+.oa-flow-table .pro-name{
 
 	width:321px;
 
 }
 
+.oa-flow-table.purchase-offer-list  .pro-name{
 
-#purchase-pro-add-list .pro-type{
+	width:283px;
+
+    margin-left:76px;
+
+
+}
+
+
+.oa-flow-table .pro-type{
 
 	width:321px;
 
 }
 
-#purchase-pro-add-list .pro-count{
+.oa-flow-table.purchase-offer-list .pro-type{
+
+   width:251px;
+
+}
+
+.oa-flow-table .pro-count{
 
 	width:308px;
 
 }
 
-#purchase-pro-add-list  .chosen input {
+.oa-flow-table.purchase-offer-list .pro-count{
 
-	width:4px;
+    width:209px;
 
 }
 
-#purchase-pro-add-list  input[type="text"]{
+.oa-flow-table.purchase-offer-list .pro-price{
+
+    width:187px;
+
+}
+
+
+.oa-flow-table.purchase-offer-list  .chosen input {
+
+    display: none;
+}
+
+.oa-flow-table  input[type="text"] , .oa-flow-table  textarea{
 
 	width:290px;
 
     padding-left: 10px;
+
+    margin-top:8px;
 }
 
+#purchase-pro-add-list.oa-flow-table input[type="text"]{
 
-#purchase-pro-add-list  input[type="checkbox"]{
+    width:290px;
 
-	width:16px; height:16px;
+    padding-left: 10px;
 
-	margin-top:12px;
+    margin-top:8px;
+
+}
+
+.oa-flow-table  input[type="checkbox"]{
+
+	margin-top:2px;
 
 	margin-left:17px;
+
 }
 
-#purchase-pro-add-list .heads input[type="checkbox"]{
+.oa-flow-table .heads input[type="checkbox"]{
 
 	margin-top:7px;
 
 }
 
-#purchase-pro-add-list .heads .pro-name , #purchase-pro-add-list .heads .pro-type , #purchase-pro-add-list .heads .pro-count {
+.oa-flow-table.purchase-offer-list .pro-price input[type="text"]{
+
+    width:170px;
+
+}
+
+.oa-flow-table.purchase-proe .heads .pro-name , .oa-flow-table .heads .pro-type , .oa-flow-table .heads .pro-count {
 
 	text-indent: 13px;
+
+}
+
+.oa-flow-table  .heads span{
+
+	text-indent: 0px;
+
+    font:bold 12px/40px Arial , "Microsoft YaHei", "微软雅黑",STHeiti;
+
+}
+
+
+
+
+.oa-flow-table.purchase-offer-list .item .pro-name , .oa-flow-table.purchase-offer-list .item .pro-type , .oa-flow-table.purchase-offer-list .item .pro-count {
+
+	text-indent: 0px;
+
+    overflow:hidden;
+
+	white-space: nowrap;
+
+	text-overflow:ellipsis;
+
+
+}
+
+.oa-flow-table.flow-progress .item , .oa-flow-table.flow-progress .heads {
+
+        height:44px;
+
+}
+
+.oa-flow-table.flow-progress span{
+
+        display: inline-block;
+
+        height:44px;
+
+        line-height:44px;
+
+        vertical-align: middle;
+
+}
+
+
+
+
+
+.oa-flow-table.flow-progress  .flow-node{
+
+    width:129px; margin-left:41px;
+
+}
+.oa-flow-table.flow-progress  .flow-advice{
+
+    width:159px;
+
+}
+
+.oa-flow-table.flow-progress  .flow-operate{
+
+    width:162px;
+
+}
+.oa-flow-table.flow-progress  .flow-operate-time{
+
+    width:257px;
+
+}
+.oa-flow-table.flow-progress  .flow-operater{
+
+    width:249px;
+
+}
+
+.oa-flow-table.flow-progress  .flow-reciver{
+
+    width:201px;
+
+}
+
+
+
+.flow-form .memo .blueFont{
+
+    font-weight: bold;
 
 }
 

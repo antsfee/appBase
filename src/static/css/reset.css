@@ -8,7 +8,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     padding: 0; 
     border: none; 
     outline: none; 
-    font:12px/2  Arial , "宋体" , "微软雅黑";
+    font:12px/2  Arial , SimSun , "Microsoft YaHei" , STHeiti , STSong ,"宋体" , "微软雅黑";
     vertical-align: baseline; 
 } 
 :focus {
@@ -84,10 +84,11 @@ input ,select , textarea ,button{
 
 
 .blueFont{
-
     color:#405eae;
+}
 
-
+.redFont{
+    color:#f64747;
 }
 
 .grayFont{
@@ -230,14 +231,11 @@ input ,select , textarea ,button{
     height:26px;
     border:none;
     border:1px solid #e5e5e5;
-
-    padding:10px auto\9;
+   padding-top:4px\9;
 
 }
 
 .list-form input[type='checkbox'], .list-form input[type='radio']{
-
-    with:8px; height:7px;
     background: #ffffff;
 }
 
@@ -383,7 +381,7 @@ input ,select , textarea ,button{
 
     position: absolute;
 
-    right:9px; top:4px;
+    right:5px; top:3px;
 
 }
 

@@ -1,0 +1,182 @@
+{% extends "base_layout.html" %}
+{% block Title  %}
+{{title}}
+{% endblock %}
+{% block Style %}
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/dismiss.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.validator.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.datetimepicker.css" media="screen,all"/>
+{% endblock %}
+{% block Uploader %}
+<script type="text/javascript" src="/static/js/lib/swf/js/swfupload.js"></script>
+<script type="text/javascript" src="/static/js/lib/swf/js/swfupload.queue.js"></script>
+<script type="text/javascript" src="/static/js/lib/swf/js/fileprogress.js"></script>
+<script type="text/javascript" src="/static/js/lib/swf/js/handlers.js"></script>
+<script type="text/javascript">
+  var swfu ;
+        window.onload=function(){
+			var settings = {
+                flash_url : "/static/js/lib/swf/swfupload.swf",
+				flash9_url : "/static/js/lib/swf/swfupload_fp9.swf",
+				upload_url: "/upload",
+				post_params: {"PHPSESSID" : "23424"},
+				file_size_limit : "100 MB",
+				file_types : "*.*",
+				file_types_description : "All Files",
+				file_upload_limit : 100,
+				file_queue_limit : 0,
+				custom_settings : {
+					progressTarget : "fsUploadProgress",
+					cancelButtonId : "btnCancel"
+				},
+			    // debug: true,
+                 // Button settings
+                button_image_url: "/static/img/bkpng.png",
+                 button_width: "80",
+                 button_height: "31",
+                 button_placeholder_id: "add_plugin",
+                  button_text: '<span class="icon-btn-azury btn-scan"></span>',
+                  button_text_style: ".btn-scan{ color:#2E5DA6;font-weight:bold; }",
+                  button_text_left_padding: 0,
+                  button_text_top_padding: 0,
+				// The event handler functions are defined in handlers.js
+	            swfupload_preload_handler : preLoad,
+				swfupload_load_failed_handler : loadFailed,
+				file_queued_handler : fileQueued,
+				file_queue_error_handler : fileQueueError,
+				upload_start_handler : uploadStart,
+				upload_progress_handler : uploadProgress,
+				upload_error_handler : uploadError,
+				upload_success_handler : uploadSuccess
+			};
+
+            swfu = new SWFUpload(settings);
+
+             var cc = document.getElementById('swf_queue_clear');
+
+            cc.addEventListener('click',function(){
+
+                    swfu.cancelQueue();
+
+                var swf_wraper =     document.querySelectorAll('.progressWrapper');
+
+                   for(var i = swf_wraper.length -1 ; i>=0;i--){
+
+                       swf_wraper[i].style.display = "none";
+
+                   }
+
+            },false)
+
+           // console.dir(swfu);
+
+    }
+ </script>
+{% endblock %}
+{% block Content %}
+<div class="main">
+      <div class="mainArea">
+          <ul>
+            <li id="purchase-request" class="flow-request">
+                <h2 class="levelTitle-1"><span class="icon-line-brown"></span>辞职申请<span class="instruction">带<i class="red">*</i>为必填项</span><span class="form-order">显示工作流程图</span></h2>
+                <div class="flow-req-cont">
+                    <fieldset class="purchase-field">
+                        <form class="purchase-form" name="flow-form">
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-title"><span class="red">*</span>标题：</label></dt>
+                                <dd><input type="text" name="flow-title" id="flow-title"   placeholder="请示-XXXX-2014-1-1" required /></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-man">申请人：</label></dt>
+                                <dd><input type="text" name="flow-man" id="flow-man" /></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-resign-type"><span class="red">*</span>人员所属类别：</label></dt>
+                                <dd><div class="belongto-render" ><select name="flow-resign-type" id="flow-resign-type" required>
+                                    <option>flow-become-type 1</option>
+                                    <option>flow-become-type 2</option>
+                                    <option>flow-become-type 3</option>
+                                    <option>flow-become-type 4</option>
+                                    <option>flow-become-type 5</option>
+                                </select></div></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-department"><span class="red">*</span>请示人所在部门：</label></dt>
+                                <dd><span class="state-wait-sure">通用服务部门</span> </dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-resign-startime"><span class="red">*</span>到岗时间：</label></dt>
+                                <dd>
+                                    <div class="input-time-box">
+                                        <input type="text" name="flow-resign-startime" id="flow-resign-startime" placeholder="到岗日期" required />
+                                        <span class="icon-calendar icon-time-button"></span>
+                                   </div>
+                                </dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-resign-endtime"><span class="red">*</span>合同终止日期：</label></dt>
+                                <dd>
+                                    <div class="input-time-box">
+                                        <input type="text" name="flow-resign-endtime" id="flow-resign-endtime" placeholder="合同终止日期" required />
+                                        <span class="icon-calendar icon-time-button"></span>
+                                   </div>
+                                </dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-resign-time"><span class="red">*</span>预计离职日期：</label></dt>
+                                <dd>
+                                    <div class="input-time-box">
+                                        <input type="text" name="flow-resign-time" id="flow-resign-time" placeholder="预计离职日期" required />
+                                        <span class="icon-calendar icon-time-button"></span>
+                                   </div>
+                                </dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-resign-personinfo"><span class="red">*</span>档案及户口情况：</label></dt>
+                                <dd>
+                                  <textarea  name="flow-resign-personinfo" id="flow-resign-personinfo"></textarea>
+                                </dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-resign-reason"><span class="red">*</span>离职原因：</label></dt>
+                                <dd><textarea name="flow-resign-reason" id="flow-resign-reason" required></textarea></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-resign-computer"><span class="red">*</span>电脑登陆名及密码：</label></dt>
+                                <dd><input type="text" name="flow-resign-computer" id="flow-dismiss-position" required /></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-dismiss-fileList">交接文件清单：</label></dt>
+                                <dd class="memo"><span  class="icon-btn-azury btn_scan"><i id="add_plugin" class="">浏览</i></span>未选中文件。<span id="swf_queue_clear" class="blueFont btn_clear_plugin">[清空]</span>(此目录下最大只能上传15M/个的附件)
+                                 <div id="fsUploadProgress"></div>
+                                </dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-sign">签名：</label></dt>
+                                <dd><input type="text" name="flow-sign" id="flow-sign" /></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain hidden">操作:</label></dt>
+                                <dd>
+                                  <a href="javascript:void(0);"  class="icon-btn-gray" data-event="return" data-selector="form.purchase-form" >返回</a>
+                                  <a href="javascript:void(0);"  class="icon-btn-blue" data-event="save" data-selector="form.purchase-form" >保存</a>
+                                  <a href="javascript:void(0);"  class="icon-btn-blue" data-event="submit" data-selector="form.purchase-form" >提交</a>
+                                </dd>
+                            </dl>
+                        </form>
+                    </fieldset>
+                </div>
+            </li>
+          </ul>
+        <div id="fixed">
+            <span class="icon-up-white"></span>
+            <span class="icon-up-brown"></span>
+        </div>
+     </div>
+ </div>
+{% endblock %}
+{% block Script %}
+<script src="/static/js/require.js" data-main="/static/js/lib/resign/fill.js"></script>
+{% endblock %}

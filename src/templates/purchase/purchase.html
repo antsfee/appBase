@@ -1,4 +1,4 @@
-{% extends "../index.html" %}
+{% extends "../base_layout.html" %}
 {% block Title  %}
 我们的--OA
 {% endblock %}
@@ -58,7 +58,7 @@
                             </dl>
                             <dl class="list-form-flt">
                                 <dt><label class="formExplain" for="purchase-sign">物品清单：</label></dt>
-                                <dd><ul><li><span class="icon-btn-azury btn_add"><span class="icon-plus"></span>&nbsp;添加</span><span  class="blueFont btn_delete">删除</span></li></ul>
+                                <dd><ul><li><span class="icon-btn-azury btn_add" purchase_add_product_i data-selector="#purchase-pro-add-list" data-template="purchase-pro-add-list-input"><span class="icon-plus"></span>&nbsp;添加</span><span  class="blueFont btn_delete">删除</span></li></ul>
                                   <ul id="purchase-pro-add-list">
                                     <li class="heads">
                                       <span class="chosen"><input type="checkbox" /></span>

@@ -1,0 +1,156 @@
+{% extends "base_layout.html" %}
+{% block Title  %}
+{{title}}
+{% endblock %}
+{% block Style %}
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/askfor.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.validator.css" media="screen,all"/>
+{% endblock %}
+{% block Uploader %}
+{% endblock %}
+{% block Content %}
+<div class="main">
+      <div class="mainArea">
+          <ul>
+            <li id="purchase-request" class="flow-request">
+                <h2 class="levelTitle-1"><span class="icon-line-brown"></span>请示<span class="instruction">带<i class="red">*</i>为必填项</span><span class="form-order">显示工作流程图</span></h2>
+                <div class="flow-req-cont">
+                    <fieldset class="purchase-field">
+                        <form class="purchase-form" name="flow-form">
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-title"><span class="red">*</span>标题：</label></dt>
+                                <dd><span class="state-wait-sure">请示-陈志勇-2014-08-25</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-man">请示人：</label></dt>
+                                <dd><span class="state-wait-sure">请示人陈志远</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-belongto">请示人所在部门：</label></dt>
+                                <dd><span class="state-wait-sure">通用部门</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-hir-content"><span class="red">*</span>请示内容：</label></dt>
+                                <dd><span class="state-wait-sure">请示的内容伯翰了很多我们一起来瞅瞅，我们想搞一搞什么那，就是请求内容，要不怎样，要不就这岸。</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-hir-name"><span class="red">*</span>拟录用人姓名：</label></dt>
+                                <dd>
+                                   <span class="state-wait-sure">张三</span>
+                                </dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-hir-department"><span class="red">*</span>所属部门：</label></dt>
+                                <dd>
+                                  <span class="state-wait-sure">组员</span>
+                                </dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-hir-position"><span class="red">*</span>拟录用岗位：</label></dt>
+                                <dd>
+                                    <span class="state-wait-sure">网站部</span>
+                                </dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-hir-superior"><span class="red">*</span>直接上级：</label></dt>
+                                <dd>
+                                    <span class="state-wait-sure">张岩</span>
+                                </dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-hir-time"><span class="red">*</span>拟到岗时间：</label></dt>
+                                <dd>
+                                    <span class="state-wait-sure">2015-02-12</span>
+                                </dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-hir-info"><span class="red">*</span>拟录用人个人信息：</label></dt>
+                                <dd>
+                                    <span class="blueFont btn_add" data-event="oa_look_flow">查看</span>
+                                </dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="refer-flow">拟录用人面试信息：</label></dt>
+                                <dd> <span class="state-wait-sure">面试信息面试信息面试信息面试信息</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-sign">签字：</label></dt>
+                                <dd><span class="state-wait-sure">签名字啊</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-remark">备注：</label></dt>
+                                 <dd><span class="state-wait-sure">备注</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-advice">您的意见：</label></dt>
+                                 <dd><textarea name="flow-advice" placeholder="您的意见"></textarea></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain hidden" for="purchase-sign">返回:</label></dt>
+                                <dd>
+                                 <a href="javascript:void(0);" class="icon-btn-gray" data-event="return" data-selector="form.flow-form">返回</a>
+                                 <a href="javascript:void(0);" class="icon-btn-blue" data-event="agree" data-selector="form.flow-form">同意</a>
+                                 <a href="javascript:void(0);" class="icon-btn-blue" data-event="disagree" data-selector="form.flow-form">不同意</a>
+                                </dd>
+                            </dl>
+                        </form>
+                    </fieldset>
+                </div>
+            </li>
+            <li  class="flow-request">
+                   <ul id="oa-flow-table" class="oa-flow-table flow-progress">
+                                    <li class="heads">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate"><span class="redFont">申请不通过</span></span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                  </ul>
+            </li>
+          </ul>
+        <div id="fixed">
+            <span class="icon-up-white"></span>
+            <span class="icon-up-brown"></span>
+        </div>
+     </div>
+ </div>
+{% endblock %}
+{% block Script %}
+<script src="/static/js/require.js" data-main="/static/js/lib/hire/onFill.js"></script>
+{% endblock %}

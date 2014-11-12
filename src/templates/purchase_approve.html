@@ -1,0 +1,159 @@
+{% extends "base_layout.html" %}
+{% block Title  %}
+{{title}}
+{% endblock %}
+{% block Style %}
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/purchase.css" media="screen,all"/>
+{% endblock %}
+{% block Uploader %}
+{% endblock %}
+{% block Content %}
+<div class="main">
+      <div class="mainArea">
+          <ul>
+            <li id="purchase-offer" class="flow-request purchase-approve">
+                <h2 class="levelTitle-1"><span class="icon-line-brown"></span>采购申请<span class="instruction">带<i class="red">*</i>为必填项</span><span class="form-order">显示工作流程图</span></h2>
+                <div class="flow-req-cont">
+                    <fieldset class="flow-field">
+                        <form class="flow-form" name="flow-form">
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-title"><span class="red">*</span>标题：</label></dt>
+                                <dd><span class="state-wait-sure">"请示-XXXX-2014-1-1"</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-man">请示人：</label></dt>
+                                <dd><span class="state-wait-sure">"XXX"<span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-department">请示人所在部门：</label></dt>
+                                <dd><span class="state-wait-sure">通用服务部"</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-belongto">请示所属：</label></dt>
+                                <dd><span class="state-wait-sure">管理部门</span></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-reason">事由：</label></dt>
+                                <dd><p name="purchase-reason" id="purchase-reason" class="state-wait-sure">
+                                    我们的过去不在未来，未来是双十一不多卖点你对不起【表情】我们的过去不在未来，未来是双十一不多卖点你对不起【表情】我们的过去不在未来，未来是双十一不多卖点你对不起【表情】我们的过去不在未来，未来是双十一不多卖点你对不起【表情】我们的过去不在未来，未来是双十一不多卖点你对不起【表情】我们的过去不在未来，未来是双十一不多卖点你对不起【表情】我们的过去不在未来，未来是双十一不多卖点你对不起【表情】
+                                </p></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-reason">相关流程：</label></dt>
+                                <dd><span class="blueFont btn_add" data-event="oa_add_flow">添加</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-reason">相关附件：</label></dt>
+                                <dd class="memo">
+                                    <p class="blueFont">附件一.doc</p>
+                                    <p class="blueFont">附件一.doc</p>
+                                    <p class="blueFont">附件一.doc</p>
+                                </dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-sign">签字：</label></dt>
+                                <dd><span class="state-wait-sure">签字</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-sign">物品清单：</label></dt>
+                                <dd><ul  class="oa-flow-table purchase-offer-list">
+                                    <li class="heads">
+                                      <span class="pro-name">物品名称</span>
+                                      <span class="pro-type">型号</span>
+                                      <span class="pro-count">数量</span>
+                                      <span class="pro-price">价格</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="pro-name">这是物品的名称啊名称我了去民亨</span>
+                                      <span class="pro-type">这是物品的型号啊名称我了去型号</span>
+                                      <span class="pro-count">123</span>
+                                        <span class="pro-price"><input name="price" value="23.00" type="text"></span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="pro-name">这是物品的名称啊名称我了去民亨</span>
+                                      <span class="pro-type">这是物品的型号啊名称我了去型号</span>
+                                      <span class="pro-count">123</span>
+                                      <span class="pro-price"><input name="price" value="23.00" type="text"></span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="pro-name">这是物品的名称啊名称我了去民亨</span>
+                                      <span class="pro-type">这是物品的型号啊名称我了去型号</span>
+                                      <span class="pro-count">123</span>
+                                      <span class="pro-price"><input name="price" value="23.00" type="text"></span>
+                                    </li>
+                                  </ul>
+                                </dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-advice">意见：</label></dt>
+                                <dd><textarea name="purchase-advice" class="advice" ></textarea></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain hidden" for="purchase-sign">你到底同不同意:</label></dt>
+                                <dd>
+                                  <a href="javascript:void(0);" class="icon-btn-gray" data-event="return" data-selector="form.flow-form">返回</a>
+                                  <a href="javascript:void(0);"  class="icon-btn-blue" data-event="agree" data-selector="form.flow-form" >同意</a>
+                                  <a href="javascript:void(0)" class="icon-btn-blue" data-event="disagree" data-selector="form.flow-form" >不用意</a>
+                                </dd>
+                            </dl>
+                        </form>
+                    </fieldset>
+                </div>
+            </li>
+            <li  class="flow-request">
+                   <ul id="oa-flow-table" class="oa-flow-table flow-progress">
+                                    <li class="heads">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate"><span class="redFont">申请不通过</span></span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                  </ul>
+            </li>
+          </ul>
+        <div id="fixed">
+            <span class="icon-up-white"></span>
+            <span class="icon-up-brown"></span>
+        </div>
+     </div>
+ </div>
+{% endblock %}
+{% block Script %}
+<script src="/static/js/require.js" data-main="/static/js/lib/purchase/approve.js"></script>
+{% endblock %}

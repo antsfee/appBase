@@ -1,0 +1,205 @@
+{% extends "base_layout.html" %}
+{% block Title  %}
+{{title}}
+{% endblock %}
+{% block Style %}
+<link rel="stylesheet" type="text/css" href="/static/css/reset.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/askfor.css" media="screen,all"/>
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.validator.css" media="screen,all"/>
+{% endblock %}
+{% block Uploader %}
+<script type="text/javascript" src="/static/js/lib/swf/js/swfupload.js"></script>
+<script type="text/javascript" src="/static/js/lib/swf/js/swfupload.queue.js"></script>
+<script type="text/javascript" src="/static/js/lib/swf/js/fileprogress.js"></script>
+<script type="text/javascript" src="/static/js/lib/swf/js/handlers.js"></script>
+<script type="text/javascript">
+  var swfu ;
+        window.onload=function(){
+			var settings = {
+                flash_url : "/static/js/lib/swf/swfupload.swf",
+				flash9_url : "/static/js/lib/swf/swfupload_fp9.swf",
+				upload_url: "/upload",
+				post_params: {"PHPSESSID" : "23424"},
+				file_size_limit : "100 MB",
+				file_types : "*.*",
+				file_types_description : "All Files",
+				file_upload_limit : 100,
+				file_queue_limit : 0,
+				custom_settings : {
+					progressTarget : "fsUploadProgress",
+					cancelButtonId : "btnCancel"
+				},
+			    // debug: true,
+                 // Button settings
+                button_image_url: "/static/img/bkpng.png",
+                 button_width: "80",
+                 button_height: "31",
+                 button_placeholder_id: "add_plugin",
+                  button_text: '<span class="icon-btn-azury btn-scan"></span>',
+                  button_text_style: ".btn-scan{ color:#2E5DA6;font-weight:bold; }",
+                  button_text_left_padding: 0,
+                  button_text_top_padding: 0,
+				// The event handler functions are defined in handlers.js
+	            swfupload_preload_handler : preLoad,
+				swfupload_load_failed_handler : loadFailed,
+				file_queued_handler : fileQueued,
+				file_queue_error_handler : fileQueueError,
+				upload_start_handler : uploadStart,
+				upload_progress_handler : uploadProgress,
+				upload_error_handler : uploadError,
+				upload_success_handler : uploadSuccess
+			};
+
+            swfu = new SWFUpload(settings);
+
+             var cc = document.getElementById('swf_queue_clear');
+
+            cc.addEventListener('click',function(){
+
+                    swfu.cancelQueue();
+
+                var swf_wraper =     document.querySelectorAll('.progressWrapper');
+
+                   for(var i = swf_wraper.length -1 ; i>=0;i--){
+
+                       swf_wraper[i].style.display = "none";
+
+                   }
+
+            },false)
+
+           // console.dir(swfu);
+
+    }
+ </script>
+{% endblock %}
+{% block Content %}
+<div class="main">
+      <div class="mainArea">
+          <ul>
+            <li id="purchase-request" class="flow-request">
+                <h2 class="levelTitle-1"><span class="icon-line-brown"></span>请示<span class="instruction">带<i class="red">*</i>为必填项</span><span class="form-order">显示工作流程图</span></h2>
+                <div class="flow-req-cont">
+                    <fieldset class="purchase-field">
+                        <form class="purchase-form" name="flow-form">
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-title"><span class="red">*</span>标题：</label></dt>
+                                <dd><input type="text" name="flow-title" id="flow-title" required  placeholder="请示-XXXX-2014-1-1"/></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-man">请示人：</label></dt>
+                                <dd><span class="state-wait-sure">请示人陈志远</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-belongto">请示人所在部门：</label></dt>
+                                <dd><div class="belongto-render"><select class="styled" name="purchase-belongto" id="purchase-belongto" placeholder="通用服务部">
+                                  <option value="">aaaaaaaaaaaaa</option>
+                                  <option value="">bbbbbbbbbbbbb</option>
+                                  <option value="">ccccccccccccc</option>
+                                  <option value="">ddddddddddddd</option>
+                                  <option value="">eeeeeeeeeeeee</option>
+                                  <option value="">fffffffffffff</option>
+                                </select></div></dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-fee"><span class="red">*</span>是否涉及费用：</label></dt>
+                                <dd>
+                                    <span class="radio-box"><input type="radio" name="flow-fee" value="nofee" checked>不涉及</span>
+                                    <span class="radio-box"><input type="radio" name="flow-fee" value="fee">涉及</span>
+                                </dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="flow-fee"><span class="red">*</span>请示对象：</label></dt>
+                                <dd><div class="option-box"><span class="option-item">张三<i class="icon-cross"></i></span><span class="option-item">王二<i class="icon-cross"></i></span><span class="option-item">狗生<i class="icon-cross"></i></span></div><span class="blueFont btn_add" data-event="oa_add_flow">添加</span>
+                                </dd>
+                            </dl>
+                             <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-reason"><span class="red">*</span>请示内容：</label></dt>
+                                <dd><textarea name="purchase-reason" id="purchase-reason"></textarea></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="referpro">相关项目：</label></dt>
+                                <dd><input type="text" name="referpro" id="referpro" placeholder="相关项目" /></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="refer-flow">相关流程：</label></dt>
+                                <dd><div class="option-box"><span class="option-item">流程一<i class="icon-cross"></i></span><span class="option-item">流程二<i class="icon-cross"></i></span><span class="option-item">流程三<i class="icon-cross"></i></span></div><span class="blueFont btn_add" data-event="oa_add_flow">添加</span></dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-reason">相关附件：</label></dt>
+                                <dd class="memo"><span  class="icon-btn-azury btn_scan"><i id="add_plugin" class="">浏览</i></span>未选中文件。<span id="swf_queue_clear" class="blueFont btn_clear_plugin">[清空]</span>(此目录下最大只能上传15M/个的附件)
+                                       <div id="fsUploadProgress"></div>
+                                </dd>
+                            </dl>
+                            <dl class="list-form-flt">
+                                <dt><label class="formExplain" for="purchase-sign">签字：</label></dt>
+                                <dd><input type="text" name="purchase-sign" id="purchase-sign" /></dd>
+                            </dl>
+                              <dl class="list-form-flt">
+                                <dt><label class="formExplain hidden" for="purchase-sign">返回:</label></dt>
+                                <dd>
+                                  <a href="javascript:void(0);" class="icon-btn-gray" data-event="delete" data-selector="form.flow-form">删除</a>
+                                  <a href="javascript:void(0);" class="icon-btn-blue" data-event="save" data-selector="form.purchase-form">保存</a>
+                                  <a href="javascript:void(0);"  class="icon-btn-blue" data-event="submit" data-selector="form.purchase-form" >提交</a>
+                                </dd>
+                            </dl>
+                        </form>
+                    </fieldset>
+                </div>
+            </li>
+            <li  class="flow-request">
+                   <ul id="oa-flow-table" class="oa-flow-table flow-progress">
+                                    <li class="heads">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate"><span class="redFont">申请不通过</span></span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                    <li class="item">
+                                      <span class="flow-node">节点</span>
+                                      <span class="flow-advice">意见</span>
+                                      <span class="flow-operate">操作</span>
+                                      <span class="flow-operate-time">操作时间</span>
+                                      <span class="flow-operater">操作时间</span>
+                                      <span class="flow-reciver">接受人</span>
+                                    </li>
+                                  </ul>
+           </li>
+         </ul>
+        <div id="fixed">
+            <span class="icon-up-white"></span>
+            <span class="icon-up-brown"></span>
+        </div>
+     </div>
+ </div>
+{% endblock %}
+{% block Script %}
+<script src="/static/js/require.js" data-main="/static/js/lib/askfor/noApprove.js"></script>
+{% endblock %}

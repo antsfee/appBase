@@ -50,7 +50,7 @@
 
 	width:20px; height:19px;
 
-	background: url(../img/static_all_icon.png) no-repeat -30.9px -98px;
+	background: url(../img/static_all_icon.png) no-repeat -31.9px -98px;
 
 
 }
@@ -99,7 +99,7 @@
 
 	background: url(../img/static_all_icon.png) no-repeat -92px -59px;
 
-	font: bold 14px/32px "微软雅黑";
+	font: bold 14px/32px "Microsoft YaHei" ,"微软雅黑",STxihei;
 	
 	color:#ffffff;
 
@@ -118,7 +118,7 @@
 
 	color:#555555;
 
-	font:bold 14px/32px "微软雅黑";
+	font:bold 14px/32px "Microsoft YaHei" ,"微软雅黑",STxihei;
 
 	text-align: center;
 
@@ -135,7 +135,7 @@
 
 	color:#ffffff;
 
-	font:bold 14px/32px "微软雅黑";
+	font:bold 14px/32px "Microsoft YaHei" ,"微软雅黑",STxihei;
 
 	text-align: center;
 
@@ -328,7 +328,7 @@
 
 	position: relative;
 
-	font:bold 16px "微软雅黑" ;
+	font:bold 16px "Microsoft YaHei" ,"微软雅黑",STxihei;
 
 	height:40px;
 
@@ -354,7 +354,7 @@
 
 	margin-left:30px;
 
-	font:12px/28px "微软雅黑" ;
+	font:12px/28px "Microsoft YaHei" ,"微软雅黑",STxihei;
 
 }
 
@@ -364,7 +364,7 @@
 
 	float:right;
 
-	font:12px/28px "微软雅黑";
+	font:12px/28px "Microsoft YaHei" ,"微软雅黑",STxihei;
 
 	color:#1273ea;
 
@@ -497,3 +497,524 @@
        color:#999999;
 }
 
+/* purchase request begin */
+
+ .flow-request {
+
+	margin-top:34px;
+
+}
+
+ .flow-req-cont{
+
+	background: url(../img/gry_whit_bg.jpg) repeat-x center top;
+
+	border:1px solid #f9f9f9;
+
+    border-bottom:1px dashed #d0d0d0;
+
+	border-top:none;
+
+	padding-top:43px;
+
+}
+
+
+
+ .flow-request .list-form-flt{
+
+		margin-bottom: 14px;
+
+
+}
+
+
+.flow-request .list-form-flt:last-child,.flow-request .list-form-flt.last {
+
+		margin-bottom: 99px;
+
+        margin-top:44px;
+}
+
+
+.flow-request .list-form-flt dt{
+
+	width:135px;
+
+	text-align: right;
+
+}
+
+.flow-request .list-form-flt dd{
+
+	padding-left:9px;
+
+    max-width:1011px;
+}
+
+ .flow-request .list-form-flt .formExplain , .flow-request .list-form-flt .state-wait-sure{
+
+	font:12px/26px  Arial,"Microsoft YaHei" ,"微软雅黑",STxihei;
+
+	color:#555555;
+
+	vertical-align: middle;
+
+}
+
+
+
+ .flow-request .list-form-flt a[class^="icon-btn"]{
+
+	margin-right: 29px;
+
+}
+
+
+.flow-request .list-form-flt  input[type="password"],.flow-request .list-form-flt  input[type="text"],.flow-request .list-form-flt  input[type="password"]{
+
+	width:378px;
+
+	vertical-align: middle;
+
+    padding-left: 10px;
+}
+
+.flow-request .list-form-flt  input[type="text"].w1-2{
+
+    width:165px;
+
+
+}
+
+
+.flow-request .list-form-flt  select{
+
+	width:378px;
+
+	padding-left: 10px;
+
+}
+
+
+.flow-request .list-form-flt  textarea{
+
+	width:915px;
+
+	min-height:66px;
+
+	padding-left: 10px;
+
+}
+
+.flow-request.purchase-approve  textarea.advice{
+
+    width:1009px;
+
+}
+
+ .flow-request .table-gray{
+
+	width:800px;
+
+	margin-top:11px;
+
+}
+
+.flow-request .btn_add{
+
+	color:#1273ea;
+
+	cursor:pointer;
+
+}
+
+ .flow-request .btn_scan {
+
+	color:#2e5da6;
+	margin-right:10px;
+}
+
+.flow-request .btn_clear_plugin{
+
+	margin:auto 16px auto 25px;
+	cursor: pointer;
+}
+
+.purchase-request .btn_add_plugin , .flow-request .btn_add_plugin{
+
+	margin-right:8px;
+
+	cursor: pointer;
+
+}
+
+span.customSelect {
+    font:12px sans-serif;
+    background:#fff url(../img/customSelect-arrow.gif)  no-repeat 357px 12px;
+    border:1px solid #ddd;
+    color:#555;
+    padding:0px 10px;
+    -moz-border-radius: 2px 2px;
+    -webkit-border-radius: 2px 2px;
+    border-radius: 2px 2px;
+    width:358px;
+    height:26px;
+}
+
+
+ .flow-request .belongto-render{
+
+	width:378px;
+
+	position: relative;
+}
+
+  .flow-request .belongto-render .msg-box.n-right{
+
+        position: absolute;
+        margin:0px!important;
+        left:380px!important;
+
+        top:8px!important;
+  }
+
+
+.flow-request .belongto-render select  option{
+
+	height: 26px;
+
+	line-height: 26px;
+
+	vertical-align: middle;
+
+	padding-top:8px;
+
+}
+
+
+ .flow-request .btn_delete{
+
+	cursor: pointer;
+
+    display: inline-block;
+
+    margin-left:10px;
+}
+
+
+/*#purchase-pro-add-list.oa-flow-table {*/
+	/*clear:both;*/
+	/*width:1011px;*/
+	/*margin-left:0px;*/
+	/*margin-top:11px;*/
+/*}*/
+
+ .oa-flow-table{
+
+     width:100%;
+ }
+
+ .oa-flow-table span{
+
+    font:12px/40px "Microsoft YaHei" ,"微软雅黑",STxihei;
+
+ }
+
+
+.oa-flow-table li{
+
+
+	font-size: 0px;
+
+	height:40px;
+
+	vertical-align: middle;
+
+	border:1px solid #eaecef;
+
+}
+
+.oa-flow-table li:nth-child(odd){
+
+	background: #f8f8f8;
+
+}
+.oa-flow-table .heads{
+
+	background:#eaecef!important;
+
+	vertical-align: middle;
+
+	font-weight: bold;
+
+	font-family:"Microsoft YaHei" ,"微软雅黑",STxihei;
+
+
+}
+
+
+.oa-flow-table  span{
+
+	display: inline-block;
+
+	height:40px; line-height: 40px;
+
+    vertical-align: middle;
+}
+
+.oa-flow-table  .chosen{
+
+	width:52px;
+
+    vertical-align: middle;
+
+    ;
+
+}
+
+.oa-flow-table  .chosen .checkbox{
+
+    display: inline-block;
+
+    width:16px; height:16px;
+
+    margin-left:17px;
+
+    margin-top:13px;
+
+    background: url("/static/img/static_all_icon.png") no-repeat -0px -203px;
+
+    -webkit-transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+	-moz-transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+	-ms-transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+	-o-transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+		transition:all  0.3s cubic-bezier(.9,.1,.88,1.25) 0s;
+
+}
+
+.oa-flow-table.purchase-offer-list{
+
+       margin-top:25px;
+
+}
+
+
+
+.oa-flow-table  .chosen.selected .checkbox{
+
+      background: url("/static/img/static_all_icon.png") no-repeat -0px -219px;
+
+}
+
+.oa-flow-table .pro-name{
+
+	width:321px;
+
+}
+
+.oa-flow-table.purchase-offer-list  .pro-name{
+
+	width:283px;
+
+    margin-left:76px;
+
+
+}
+
+
+.oa-flow-table .pro-type{
+
+	width:321px;
+
+}
+
+.oa-flow-table.purchase-offer-list .pro-type{
+
+   width:251px;
+
+}
+
+.oa-flow-table .pro-count{
+
+	width:308px;
+
+}
+
+.oa-flow-table.purchase-offer-list .pro-count{
+
+    width:209px;
+
+}
+
+.oa-flow-table.purchase-offer-list .pro-price{
+
+    width:187px;
+
+}
+
+
+.oa-flow-table.purchase-offer-list  .chosen input {
+
+    display: none;
+}
+
+.oa-flow-table  input[type="text"] , .oa-flow-table  textarea{
+
+	width:290px;
+
+    padding-left: 10px;
+
+    margin-top:8px;
+}
+
+/*#purchase-pro-add-list.oa-flow-table input[type="text"]{*/
+
+    /*width:290px;*/
+
+    /*padding-left: 10px;*/
+
+    /*margin-top:8px;*/
+
+/*}*/
+
+.oa-flow-table  input[type="checkbox"]{
+
+	margin-top:2px;
+
+	margin-left:17px;
+
+}
+
+.oa-flow-table .heads input[type="checkbox"]{
+
+	margin-top:7px;
+
+}
+
+.oa-flow-table.purchase-offer-list .pro-price input[type="text"]{
+
+    width:170px;
+
+}
+
+.oa-flow-table.purchase-proe .heads .pro-name , .oa-flow-table .heads .pro-type , .oa-flow-table .heads .pro-count {
+
+	text-indent: 13px;
+
+}
+
+.oa-flow-table  .heads span{
+
+	text-indent: 0px;
+
+    font:bold 12px/40px Arial , "Microsoft YaHei", "微软雅黑",STHeiti;
+
+}
+
+
+
+
+.oa-flow-table.purchase-offer-list .item .pro-name , .oa-flow-table.purchase-offer-list .item .pro-type , .oa-flow-table.purchase-offer-list .item .pro-count {
+
+	text-indent: 0px;
+
+    overflow:hidden;
+
+	white-space: nowrap;
+
+	text-overflow:ellipsis;
+
+
+}
+
+.oa-flow-table.flow-progress .item , .oa-flow-table.flow-progress .heads {
+
+        height:44px;
+
+}
+
+.oa-flow-table.flow-progress span{
+
+        display: inline-block;
+
+        height:44px;
+
+        line-height:44px;
+
+        vertical-align: middle;
+}
+
+
+
+
+
+.oa-flow-table.flow-progress  .flow-node{
+
+    width:129px; margin-left:41px;
+
+}
+.oa-flow-table.flow-progress  .flow-advice{
+
+    width:159px;
+
+}
+
+.oa-flow-table.flow-progress  .flow-operate{
+
+    width:162px;
+
+}
+.oa-flow-table.flow-progress  .flow-operate-time{
+
+    width:257px;
+
+}
+.oa-flow-table.flow-progress  .flow-operater{
+
+    width:249px;
+
+}
+
+.oa-flow-table.flow-progress  .flow-reciver{
+
+    width:201px;
+
+}
+
+
+
+.flow-form .memo .blueFont{
+
+    font-weight: bold;
+
+}
+
+.option-box{
+
+    display: inline-block;
+
+}
+
+.option-item{
+    display: inline-block;
+    position: relative;
+    background: #f0f7ff;
+    border:1px solid #cfe2fc;
+    padding-left:11px;
+    margin-right:9px;
+    font:12px/2  "Microsoft YaHei", "微软雅黑",STHeiti;
+    color:#2e5da6;
+    vertical-align: middle;
+}
+
+.option-item .icon-cross{
+
+    float: right;
+
+    margin:8px 7px auto 13px;
+
+    cursor:pointer;
+}
+
+/* purchase request end */
